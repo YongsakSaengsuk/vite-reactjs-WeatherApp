@@ -17,7 +17,7 @@ This is a simple weather application built using React and Vite. The app fetches
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/YongsakSaengsuk/vite-reactjs-WeatherApp.git>
    ```
 2. Navigate to the project directory:
    ```bash
