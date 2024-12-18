@@ -1,13 +1,14 @@
-
-import WeatherApp from './WeatherApp.jsx'
+import WeatherApp from "./WeatherApp.jsx";
 
 function App() {
-
   return (
     <>
-     <WeatherApp/>
+      <div>
+        <h1>Weather App</h1>
+      </div>
+      <WeatherApp />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
