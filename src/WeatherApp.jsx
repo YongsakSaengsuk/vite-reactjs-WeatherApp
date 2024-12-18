@@ -27,7 +27,7 @@ function WeatherApp() {
   };
 
   useEffect(() => {
-    fetchWeather(city); // Fetch weather for default city on load
+    fetchWeather(city);
   }, []);
 
   const handleSearch = () => {
@@ -43,11 +43,12 @@ function WeatherApp() {
         onChange={(e) => setCity(e.target.value)}
       />
       <button onClick={handleSearch}>Get Weather</button>
-
+      
       {error && <p style={{ color: 'red' }}>Error: {error}</p>}
       {weather && (
         <div>
           <h2>{weather.name}</h2>
+          <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt='weather icon'/>
           <p>Temperature: {weather.main.temp}°C</p>
           <p>Weather: {weather.weather[0].description}</p>
         </div>
