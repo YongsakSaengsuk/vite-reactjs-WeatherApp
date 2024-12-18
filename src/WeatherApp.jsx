@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 function WeatherApp() {
   const [weather, setWeather] = useState(null);
-  const [city, setCity] = useState('Bangkok'); // Default city
+  const [city, setCity] = useState('Bangkok'); 
   const [error, setError] = useState(null);
-  const apiKey = 'f99af0e0e3e5cfafbf150c6e0a1114a6'; // Replace with your OpenWeather API key
+  const apiKey = import.meta.env.VITE_WEATHER_API_KEY; // Replace with your OpenWeather API key
 
   const fetchWeather = (cityName) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
