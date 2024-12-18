@@ -4,6 +4,9 @@
 ## Overview
 This is a simple weather application built using React and Vite. The app fetches real-time weather data from the OpenWeather API and displays it to the user. It is designed as a learning project to enhance frontend development skills, API integration, and to serve as a project for a developer resume.
 
+## Design Credit
+The design of this weather application is inspired by [this design on Dribbble](https://dribbble.com/shots/15524720-Weather-web-app?utm_source=Clipboard_Shot&utm_campaign=Masood_ahmad_g&utm_content=Weather%20web%20app&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=Masood_ahmad_g&utm_content=Weather%20web%20app&utm_medium=Social_Share) by [Masood Ahmad](https://dribbble.com/Masood_ahmad_g). Special thanks to Masood Ahmad for the fantastic design inspiration!
+
 ## Features
 - Fetch and display current weather data for a specific location.
 - User-friendly interface built with React.
