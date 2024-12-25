@@ -21,6 +21,15 @@
             flex-direction: row;
             justify-content: space-between;
             width: 100%;
+            .search{
+                width: 50%;
+                input{
+                    border: none;
+                }
+            }
+            .date{
+                width: 50%;
+            }
         }
         .main-content {
             display: flex;

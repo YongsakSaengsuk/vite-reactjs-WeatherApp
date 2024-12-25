@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./WeatherApp.css";
+import DynamicDate from "./DynamicDate";
+
 function WeatherApp() {
   const [weather, setWeather] = useState(null);
   const [city, setCity] = useState("Bangkok");
   const [error, setError] = useState(null);
   const apiKey = import.meta.env.VITE_WEATHER_API_KEY; // Replace with your OpenWeather API key
-
+ 
   const fetchWeather = (cityName) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
 
@@ -38,16 +40,23 @@ function WeatherApp() {
     <div className="weather-app">
       <div className="main-forcast">
         <div className="topbar">
-          <div>
-            <input
-              type="text"
-              placeholder="Enter city name"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-            />
-            <button onClick={handleSearch}>Get Weather</button>
+          <div className="search">
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSearch();
+              }}
+            >
+              <input
+                type="text"
+                placeholder="Enter city name"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+              />
+              <button type="submit">Get Weather</button>
+            </form>
           </div>
-          <div>date</div>
+          <DynamicDate />
         </div>
         <div className="main-content">
           <div>
@@ -65,18 +74,22 @@ function WeatherApp() {
           </div>
           <div>
             <h2>Details</h2>
-            <p>Humidity: {weather && weather.main.humidity}%</p>
-            <p>Wind: {weather && weather.wind.speed} m/s</p>
+            <p>Humidity: {weather?.main?.humidity}%</p>
+            <p>Wind: {weather?.wind?.speed} m/s</p>
           </div>
         </div>
       </div>
       <div className="side-forcast">
         <h3>Good Morning</h3>
         <h3>Time</h3>
-        <h5>{weather.main.temp}°C</h5>
-        <p>Feels like: {weather && weather.main.feels_like}°C</p>
-        <h5>{weather.weather[0].description}</h5>
-        <p>hourly forcast</p>
+        {weather && (
+          <>
+            <h5>{weather.main?.temp}°C</h5>
+            <p>Feels like: {weather.main?.feels_like}°C</p>
+            <h5>{weather.weather?.[0]?.description}</h5>
+            <p>hourly forecast</p>
+          </>
+        )}
       </div>
     </div>
   );
